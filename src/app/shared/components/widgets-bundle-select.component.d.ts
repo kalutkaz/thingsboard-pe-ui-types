@@ -12,13 +12,13 @@ export declare class WidgetsBundleSelectComponent implements ControlValueAccesso
     bundlesScope: 'system' | 'tenant';
     selectFirstBundle: boolean;
     selectBundleAlias: string;
-    private requiredValue;
-    get required(): boolean;
-    set required(value: boolean);
+    required: boolean;
     disabled: boolean;
+    excludeBundleIds: Array<string>;
     widgetsBundles$: Observable<Array<WidgetsBundle>>;
     widgetsBundles: Array<WidgetsBundle>;
     widgetsBundle: WidgetsBundle | null;
+    onTouched: () => void;
     private propagateChange;
     constructor(store: Store<AppState>, widgetService: WidgetService);
     registerOnChange(fn: any): void;
@@ -33,5 +33,5 @@ export declare class WidgetsBundleSelectComponent implements ControlValueAccesso
     private updateView;
     private getWidgetsBundles;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetsBundleSelectComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSelectComponent, "tb-widgets-bundle-select", never, { "bundlesScope": "bundlesScope"; "selectFirstBundle": "selectFirstBundle"; "selectBundleAlias": "selectBundleAlias"; "required": "required"; "disabled": "disabled"; }, {}, never, never, false, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<WidgetsBundleSelectComponent, "tb-widgets-bundle-select", never, { "bundlesScope": "bundlesScope"; "selectFirstBundle": "selectFirstBundle"; "selectBundleAlias": "selectBundleAlias"; "required": "required"; "disabled": "disabled"; "excludeBundleIds": "excludeBundleIds"; }, {}, never, never, false, never>;
 }

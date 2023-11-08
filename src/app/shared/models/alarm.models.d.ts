@@ -44,6 +44,8 @@ export interface Alarm extends BaseData<AlarmId> {
     originator: EntityId;
     severity: AlarmSeverity;
     status: AlarmStatus;
+    acknowledged: boolean;
+    cleared: boolean;
     startTs: number;
     endTs: number;
     ackTs: number;
@@ -80,6 +82,10 @@ export interface AlarmAssignee {
     firstName: string;
     lastName: string;
     email: string;
+}
+export declare enum AlarmAssigneeOption {
+    noAssignee = "noAssignee",
+    currentUser = "currentUser"
 }
 export interface AlarmDataInfo extends AlarmInfo {
     actionCellButtons?: TableCellButtonActionDescriptor[];

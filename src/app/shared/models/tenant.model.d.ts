@@ -24,6 +24,8 @@ export interface DefaultTenantProfileConfiguration {
     transportDeviceMsgRateLimit?: string;
     transportDeviceTelemetryMsgRateLimit?: string;
     transportDeviceTelemetryDataPointsRateLimit?: string;
+    integrationMsgsPerTenantRateLimit?: string;
+    integrationMsgsPerDeviceRateLimit?: string;
     tenantEntityExportRateLimit?: string;
     tenantEntityImportRateLimit?: string;
     tenantNotificationRequestsRateLimit?: string;
@@ -32,10 +34,12 @@ export interface DefaultTenantProfileConfiguration {
     maxTransportDataPoints: number;
     maxREExecutions: number;
     maxJSExecutions: number;
+    maxTbelExecutions: number;
     maxDPStorageDays: number;
     maxRuleNodeExecutionsPerMessage: number;
     maxEmails: number;
     maxSms: number;
+    smsEnabled: boolean;
     maxCreatedAlarms: number;
     tenantServerRestLimitsConfiguration: string;
     customerServerRestLimitsConfiguration: string;
@@ -53,6 +57,8 @@ export interface DefaultTenantProfileConfiguration {
     defaultStorageTtlDays: number;
     alarmsTtlDays: number;
     rpcTtlDays: number;
+    queueStatsTtlDays: number;
+    ruleEngineExceptionsTtlDays: number;
 }
 export type TenantProfileConfigurations = DefaultTenantProfileConfiguration;
 export interface TenantProfileConfiguration extends TenantProfileConfigurations {

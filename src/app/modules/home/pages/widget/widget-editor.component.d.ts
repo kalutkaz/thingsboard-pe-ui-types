@@ -1,7 +1,6 @@
 /// <reference types="node" />
 import { PageComponent } from '@shared/components/page.component';
-import { ElementRef, OnDestroy, OnInit } from '@angular/core';
-import { WidgetsBundle } from '@shared/models/widgets-bundle.model';
+import { ElementRef, EventEmitter, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppState } from '@core/core.state';
 import { WidgetService } from '@core/http/widget.service';
@@ -46,11 +45,13 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     widgetTypesDataMap: Map<widgetType, import("@shared/models/widget.models").WidgetTypeData>;
     authUser: AuthUser;
     isReadOnly: boolean;
-    widgetsBundle: WidgetsBundle;
     widgetTypeDetails: WidgetTypeDetails;
     widget: WidgetInfo;
     origWidget: WidgetInfo;
-    isDirty: boolean;
+    private isEditModeWidget;
+    private _isDirty;
+    get isDirty(): boolean;
+    set isDirty(value: boolean);
     fullscreen: boolean;
     htmlFullscreen: boolean;
     cssFullscreen: boolean;
@@ -79,6 +80,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     errorAnnotationId: number;
     saveWidgetTimeout: Timeout;
     hotKeys: Hotkey[];
+    updateBreadcrumbs: EventEmitter<any>;
     private rxSubscriptions;
     constructor(store: Store<AppState>, window: Window, route: ActivatedRoute, router: Router, widgetService: WidgetService, translate: TranslateService, raf: RafService, dialog: MatDialog);
     private init;
@@ -93,6 +95,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     private onWindowMessage;
     private onWidgetEditModeInited;
     private onWidgetEditUpdated;
+    private onWidgetEditModeToggled;
     private onWidgetException;
     private cleanupJsErrors;
     private commitSaveWidget;
@@ -114,6 +117,7 @@ export declare class WidgetEditorComponent extends PageComponent implements OnIn
     removeResource(index: number): void;
     addResource(): void;
     widetTypeChanged(): void;
+    get confirmOnExitMessage(): string;
     static ɵfac: i0.ɵɵFactoryDeclaration<WidgetEditorComponent, never>;
     static ɵcmp: i0.ɵɵComponentDeclaration<WidgetEditorComponent, "tb-widget-editor", never, {}, {}, never, never, false, never>;
 }
