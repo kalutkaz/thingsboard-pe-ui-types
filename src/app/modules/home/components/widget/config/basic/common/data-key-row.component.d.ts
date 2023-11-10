@@ -14,6 +14,7 @@ import { Dashboard } from '@shared/models/dashboard.models';
 import { IAliasController } from '@core/api/widget-api.models';
 import { UtilsService } from '@core/services/utils.service';
 import * as i0 from "@angular/core";
+export declare const dataKeyValid: (key: DataKey) => boolean;
 export declare const dataKeyRowValidator: (control: AbstractControl) => ValidationErrors | null;
 export declare class DataKeyRowComponent implements ControlValueAccessor, OnInit, OnChanges {
     private fb;

@@ -484,7 +484,7 @@ export interface IWidgetSettingsComponent {
     functionScopeVariables: string[];
     settings: WidgetSettings;
     settingsChanged: Observable<WidgetSettings>;
-    validate(): any;
+    validateSettings(): boolean;
     [key: string]: any;
 }
 export declare abstract class WidgetSettingsComponent extends PageComponent implements IWidgetSettingsComponent, OnInit, AfterViewInit {
@@ -505,7 +505,7 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     protected constructor(store: Store<AppState>);
     ngOnInit(): void;
     ngAfterViewInit(): void;
-    validate(): void;
+    validateSettings(): boolean;
     protected setupSettings(settings: WidgetSettings): void;
     protected updateSettings(settings: WidgetSettings): void;
     protected updateValidators(emitEvent: boolean, trigger?: string): void;
@@ -514,8 +514,6 @@ export declare abstract class WidgetSettingsComponent extends PageComponent impl
     protected doUpdateSettings(settingsForm: UntypedFormGroup, settings: WidgetSettings): void;
     protected prepareInputSettings(settings: WidgetSettings): WidgetSettings;
     protected prepareOutputSettings(settings: any): WidgetSettings;
-    protected validateSettings(): boolean;
-    protected onValidate(): void;
     protected abstract settingsForm(): UntypedFormGroup;
     protected abstract onSettingsSet(settings: WidgetSettings): any;
     protected defaultSettings(): WidgetSettings;

@@ -13,6 +13,7 @@ export declare enum DoughnutLegendPosition {
     left = "left",
     right = "right"
 }
+export declare const doughnutLegendPositions: DoughnutLegendPosition[];
 export declare const doughnutLegendPositionTranslations: Map<DoughnutLegendPosition, string>;
 export declare enum DoughnutTooltipValueType {
     absolute = "absolute",
@@ -23,6 +24,8 @@ export declare const doughnutTooltipValueTypeTranslations: Map<DoughnutTooltipVa
 export interface DoughnutWidgetSettings {
     layout: DoughnutLayout;
     autoScale: boolean;
+    clockwise: boolean;
+    sortSeries: boolean;
     totalValueFont: Font;
     totalValueColor: ColorSettings;
     showLegend: boolean;
