@@ -214,6 +214,8 @@ import * as GroupPermissionDialogComponent from '@shared/components/role/group-p
 import * as ShareEntityGroupComponent from '@shared/components/group/share-entity-group.component';
 
 import * as AddEntityDialogComponent from '@home/components/entity/add-entity-dialog.component';
+import * as DatasourceComponent from '@home/components/widget/config/datasources.component';
+import * as DataKeysPanelComponent from '@home/components/widget/config/basic/common/data-keys-panel.component';
 import * as EntitiesTableComponent from '@home/components/entity/entities-table.component';
 import * as DetailsPanelComponent from '@home/components/details-panel.component';
 import * as EntityDetailsPanelComponent from '@home/components/entity/entity-details-panel.component';
@@ -563,6 +565,8 @@ class ModulesMap implements IModulesMap {
     '@shared/components/group/share-entity-group.component': ShareEntityGroupComponent,
 
     '@home/components/entity/add-entity-dialog.component': AddEntityDialogComponent,
+    '@home/components/widget/config/datasources.component': DatasourceComponent,
+    '@home/components/widget/config/basic/common/data-keys-panel.component': DataKeysPanelComponent,
     '@home/components/entity/entities-table.component': EntitiesTableComponent,
     '@home/components/details-panel.component': DetailsPanelComponent,
     '@home/components/entity/entity-details-panel.component': EntityDetailsPanelComponent,
