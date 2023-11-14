@@ -213,6 +213,7 @@ import * as GroupPermissionsComponent from '@shared/components/role/group-permis
 import * as GroupPermissionDialogComponent from '@shared/components/role/group-permission-dialog.component';
 import * as ShareEntityGroupComponent from '@shared/components/group/share-entity-group.component';
 
+import * as WidgetActionsPanelComponent from '@home/components/widget/config/basic/common/widget-actions-panel.component';
 import * as AddEntityDialogComponent from '@home/components/entity/add-entity-dialog.component';
 import * as DatasourceComponent from '@home/components/widget/config/datasources.component';
 import * as DataKeysPanelComponent from '@home/components/widget/config/basic/common/data-keys-panel.component';
@@ -720,7 +721,8 @@ class ModulesMap implements IModulesMap {
     '@home/components/scheduler/config/email-config.component': EmailConfigComponent,
     '@home/components/scheduler/scheduler-event-schedule.component': SchedulerEventScheduleComponent,
     '@home/components/profile/queue/tenant-profile-queues.component': TenantProfileQueuesComponent,
-    '@home/components/queue/queue-form.component': QueueFormComponent
+    '@home/components/queue/queue-form.component': QueueFormComponent,
+    '@home/components/widget/config/basic/common/widget-actions-panel.component': WidgetActionsPanelComponent
   };
 
   init() {
